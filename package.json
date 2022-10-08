@@ -1,0 +1,19 @@
+{
+  "name": "proyecto_ecommerce",
+  "version": "1.0.0",
+  "description": "ecommerce con react 17 y react router dom5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react17",
+    "reactrouterdom5"
+  ],
+  "author": "Gilbert Ardila",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
