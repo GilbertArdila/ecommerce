@@ -1,0 +1,11 @@
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100px;
+    background-color: black;
+}
+.Footer-title,
+.Footer-copy{
+    cursor: pointer;
+}

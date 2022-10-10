@@ -1,0 +1,10 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100px;
+    background-color: black;
+}
+.Header-checkout:hover{
+    transform: scale(1.2);
+}
