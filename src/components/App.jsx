@@ -1,8 +1,11 @@
 import React from 'react';
 import '../Styles/components/app.css';
+import {App} from '../routes/App';
 
 const App = () => {
-  return <h1>App</h1>;
+  return <>
+    <App/>
+  </>;
 };
 
 export default App;
