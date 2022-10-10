@@ -1,14 +1,15 @@
 import React from 'react';
-import { Header,Footer } from './index';
+import { Header } from './Header';
+import {Footer} from './Footer';
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <div className='main'>
-        <Header/>
-        {children}
-        <Footer/>
+    <div className="main">
+      <Header />
+      {children}
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export  {Layout}
+export { Layout };

@@ -4,6 +4,7 @@
     width: 100vw;
     height: 100px;
     background-color: black;
+    color: white;
 }
 .Header-checkout:hover{
     transform: scale(1.2);

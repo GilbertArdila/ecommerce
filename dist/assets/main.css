@@ -1,4 +1,21 @@
-h1{
-    font-size: 48px;
-    color: blue;
+.Header{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100px;
+    background-color: black;
+}
+.Header-checkout:hover{
+    transform: scale(1.2);
+}
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100px;
+    background-color: black;
+}
+.Footer-title,
+.Footer-copy{
+    cursor: pointer;
 }
