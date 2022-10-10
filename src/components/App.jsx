@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import '../Styles/components/app.css';
 
 const App = () => {
   return (
-    <div>App</div>
+    <h1>App</h1>
   )
 }
 
