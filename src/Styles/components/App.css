@@ -1,14 +1,25 @@
+:root{
+   --yellow:#fff159;
+   --white:rgba(255, 255, 255, 0.829);
+
+}
 *{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+   box-sizing: border-box;
+   padding: 0;
+   margin:0;
 }
 html{
-    font-size: 62.5%;
+   font-size: 62.5%;
 }
 body{
-    width: 100vw;
-    height: auto;
-    min-height: 100vh;
-    font-size: 1.6rem;
+   font-size: 1.6rem;
+   font-family: monospace;
+   background-color:var(--white) ;
+}
+.app{
+   display: flex;
+   width: 100vw;
+   height: auto;
+   min-height: 100vh;
+
 }

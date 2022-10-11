@@ -1,8 +1,9 @@
 import React from 'react';
-import '../Styles/components/Home.css';
+import initialState from '../initialState';
+import { Products } from '../components/Products';
 
 const Home = () => {
-  return <div className='Home'>Home</div>;
+  return <Products products={initialState.products} />;
 };
 
 export { Home };
