@@ -1,8 +1,18 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/components/Information.css';
+import {AppContext} from '../context/AppContext';
 
 const Information = () => {
+const {state}=useContext(AppContext);
+const {cart}=state
+console.log(cart)
+
+const handleTotalAmoun=()=>{
+  const reducer=(sum,currentValue)=>sum+currentValue.price
+  const sum=cart.reduce(reducer,0);
+  return sum;
+}
   return (
     <div className="Information">
       <div className="Information-content">
@@ -34,12 +44,15 @@ const Information = () => {
       </div>
       <div className="Information-sidebar">
         <h3>Pedido</h3>
-        <div className="Information-item">
-          <div className="Information-element">
-            <h4>Item name</h4>
-            <span>$10</span>
-          </div>
-        </div>
+        {cart.map((item)=>(
+                  <div className="Information-item">
+                  <div className="Information-element">
+                    <h4>{item.title}</h4>
+                    <span>${item.price}</span>
+                  </div>
+                </div>
+        ))}
+         <span>total:${handleTotalAmoun()}</span>
       </div>
     </div>
   );

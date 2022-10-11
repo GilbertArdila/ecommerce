@@ -4,6 +4,26 @@
     grid-row-gap: 1.5em;
     display: grid;
   }
+  .Payment-resume{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .Payment-resume img{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+  .Payment-resume h2{
+    font-weight: bolder;
+  }
+  .Payment-resume span{
+    font-weight: 600;
+  }
   .Payment-back {
     margin: 10px 0 0 0;
   }
