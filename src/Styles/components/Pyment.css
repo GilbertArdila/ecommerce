@@ -52,3 +52,17 @@
   .Payment-element h4 {
     margin: 0;
   }
+  .Payment-buyerInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .Payment-buyerInformation h2{
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  .Payment-button{
+    margin: 10px auto;
+  }
+  

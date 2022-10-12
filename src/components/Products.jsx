@@ -5,7 +5,7 @@ import { Searcher } from './Searcher';
 import { AppContext } from '../context/AppContext';
 
 const Products = () => {
-   const { state, addToCart } = useContext(AppContext);
+  const { state, addToCart } = useContext(AppContext);
   const { products } = state;
   const [productos, setProductos] = useState(products);
   const [search, setSearch] = useState('');
@@ -20,9 +20,8 @@ const Products = () => {
   };
   const filteredProducts = productos.filter((product) => {
     return product.title.toLowerCase().includes(search.toLowerCase());
-   });
-   return (
-    
+  });
+  return (
     <div className="Products">
       <Searcher
         handleSearch={handleSearch}
@@ -39,7 +38,7 @@ const Products = () => {
         ))}
       </div>
     </div>
-   );
+  );
 };
 
 export { Products };

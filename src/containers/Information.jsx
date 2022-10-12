@@ -1,18 +1,35 @@
-import React,{useContext} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useRef } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import '../Styles/components/Information.css';
-import {AppContext} from '../context/AppContext';
+import { AppContext } from '../context/AppContext';
 
 const Information = () => {
-const {state}=useContext(AppContext);
-const {cart}=state
-console.log(cart)
+  const { state, addToBuyer } = useContext(AppContext);
+  const { cart } = state;
+  const form = useRef(null);
+  const history = useHistory();
+  const handleTotalAmoun = () => {
+    const reducer = (sum, currentValue) => sum + currentValue.price;
+    const sum = cart.reduce(reducer, 0);
+    return sum;
+  };
 
-const handleTotalAmoun=()=>{
-  const reducer=(sum,currentValue)=>sum+currentValue.price
-  const sum=cart.reduce(reducer,0);
-  return sum;
-}
+  const handleSubmit = () => {
+    const formData = new FormData(form.current);
+    const buyer = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      address: formData.get('address'),
+      apto: formData.get('apto'),
+      city: formData.get('city'),
+      state: formData.get('state'),
+      cp: formData.get('cp'),
+      phone: formData.get('phone'),
+    };
+    addToBuyer(buyer);
+    history.push('/checkout/payment');
+  };
+
   return (
     <div className="Information">
       <div className="Information-content">
@@ -20,7 +37,7 @@ const handleTotalAmoun=()=>{
           <h2>Información de contacto:</h2>
         </div>
         <div className="Information-form">
-          <form action="">
+          <form ref={form}>
             <input type="text" name="name" placeholder="Nombre completo" />
             <input type="text" name="email" placeholder="Correo electronico" />
             <input type="text" name="address" placeholder="Dirección" />
@@ -36,23 +53,28 @@ const handleTotalAmoun=()=>{
           </form>
         </div>
         <div className="Information-buttons">
-          <div className="Information-back">Regresar</div>
+          <div className="Information-back">
+            <Link to="/checkout">Regresar</Link>
+          </div>
           <div className="Information-next">
-            <Link to={'/checkout/payment'}>Pagar</Link>
+            <button type="button" onClick={handleSubmit}>
+              Pagar
+            </button>
           </div>
         </div>
       </div>
+
       <div className="Information-sidebar">
         <h3>Pedido</h3>
-        {cart.map((item)=>(
-                  <div className="Information-item">
-                  <div className="Information-element">
-                    <h4>{item.title}</h4>
-                    <span>${item.price}</span>
-                  </div>
-                </div>
+        {cart.map((item) => (
+          <div className="Information-item" key={item.id}>
+            <div className="Information-element">
+              <h4>{item.title}</h4>
+              <span>${item.price}</span>
+            </div>
+          </div>
         ))}
-         <span>total:${handleTotalAmoun()}</span>
+        <span>total:${handleTotalAmoun()}</span>
       </div>
     </div>
   );
