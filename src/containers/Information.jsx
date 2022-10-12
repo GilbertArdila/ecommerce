@@ -2,6 +2,7 @@ import React, { useContext, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../Styles/components/Information.css';
 import { AppContext } from '../context/AppContext';
+import { regex_email, regex_phone, regex_name } from '../regexp/Regexp';
 
 const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
@@ -16,18 +17,32 @@ const Information = () => {
 
   const handleSubmit = () => {
     const formData = new FormData(form.current);
-    const buyer = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      address: formData.get('address'),
-      apto: formData.get('apto'),
-      city: formData.get('city'),
-      state: formData.get('state'),
-      cp: formData.get('cp'),
-      phone: formData.get('phone'),
-    };
-    addToBuyer(buyer);
-    history.push('/checkout/payment');
+
+    if (!regex_name.test(formData.get('name'))) {
+      alert('nombre invalido ')
+    } else if (!regex_email.test(formData.get('email'))) {
+      alert('verifica email')
+    } else if (!regex_phone.test(formData.get('phone'))) {
+      alert('telefono invalido')
+    }
+    else if (formData.get('address') === '' || formData.get('apto') === '' || formData.get('city') === '' || formData.get('state') === '' || formData.get('cp') === '') {
+      alert('no puede haber campos vacíos')
+    }
+    else {
+      const buyer = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        address: formData.get('address'),
+        apto: formData.get('apto'),
+        city: formData.get('city'),
+        state: formData.get('state'),
+        cp: formData.get('cp'),
+        phone: formData.get('phone'),
+      };
+      addToBuyer(buyer);
+      history.push('/checkout/payment');
+    }
+
   };
 
   return (

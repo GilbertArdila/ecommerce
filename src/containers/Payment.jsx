@@ -18,16 +18,14 @@ const Payment = () => {
 
   const paypalOptions = {
     clientId:
-      'AYgMZSvitYGeRsM-JJ0OMmqnHtSDJPgGwBcC67twWZkHySHzpXvgne5vWlpy4D8vijal1Hc8UMEeFAmV',
+      'sb',
     intent: 'capture',
     currency: 'USD',
   };
   const buttonStyles = {
-    layout: 'horizontal',
+    layout: 'vertical',
     color:  'gold',
-    shape:  'rect',
-    label:  'paypal',
-    height: 55
+    shape:  'rect'
   };
 
   const handlePaymentSucces = (data) => {

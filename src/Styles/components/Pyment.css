@@ -3,6 +3,7 @@
     grid-gap: 2rem;
     grid-row-gap: 1.5em;
     display: grid;
+    padding: 0 10px;
   }
   .Payment-resume{
     display: flex;
