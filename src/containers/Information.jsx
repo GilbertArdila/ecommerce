@@ -1,9 +1,9 @@
 import React, { useContext, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import '../Styles/components/Information.css';
 import { AppContext } from '../context/AppContext';
+import Swal from 'sweetalert2';
 import { regex_email, regex_phone, regex_name } from '../regexp/Regexp';
-
+import '../Styles/components/Information.css';
 const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
   const { cart } = state;
@@ -18,15 +18,35 @@ const Information = () => {
   const handleSubmit = () => {
     const formData = new FormData(form.current);
 
-    if (!regex_name.test(formData.get('name'))) {
-      alert('nombre invalido ')
-    } else if (!regex_email.test(formData.get('email'))) {
-      alert('verifica email')
-    } else if (!regex_phone.test(formData.get('phone'))) {
-      alert('telefono invalido')
+    if (!regex_name.test(formData.get('name').trim())) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Por favor ingresa nombre y apellido separados por un espacio',
+        icon: 'error',
+        confirmButtonText: 'Close'
+      })
+    } else if (!regex_email.test(formData.get('email').trim())) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Dirección de correo invalida, verificala por favor',
+        icon: 'error',
+        confirmButtonText: 'Close'
+      })
+    } else if (!regex_phone.test(formData.get('phone').trim())) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'El número teléfonico debe tener 10  dígitos sin espacios ni caracteres especiales',
+        icon: 'error',
+        confirmButtonText: 'Close'
+      })
     }
     else if (formData.get('address') === '' || formData.get('apto') === '' || formData.get('city') === '' || formData.get('state') === '' || formData.get('cp') === '') {
-      alert('no puede haber campos vacíos')
+      Swal.fire({
+        title: 'Error!',
+        text: 'Verifica que todos los campos estén diligenciados',
+        icon: 'error',
+        confirmButtonText: 'Close'
+      })
     }
     else {
       const buyer = {
