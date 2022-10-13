@@ -1,8 +1,11 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import '../Styles/components/NotFound.css';
 
 const NotFound = () => {
   return (
+    <>
+    <Helmet><title>Free-trade store-NotFound</title></Helmet>
     <section className="page_404">
       <div className="container">
         <div className="row">
@@ -26,6 +29,7 @@ const NotFound = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

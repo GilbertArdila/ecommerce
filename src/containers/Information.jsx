@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import Swal from 'sweetalert2';
@@ -69,6 +70,8 @@ const Information = () => {
   };
 
   return (
+    <>
+    <Helmet><title>Free-trade store-information</title></Helmet>
     <div className="Information">
       <div className="Information-content">
         <div className="Information-head">
@@ -115,6 +118,7 @@ const Information = () => {
         <span>total:${handleTotalAmoun()}</span>
       </div>
     </div>
+    </>
   );
 };
 

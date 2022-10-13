@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import '../Styles/components/Checkout.css';
 import { AppContext } from '../context/AppContext';
@@ -19,6 +20,8 @@ const Checkout = () => {
   };
 
   return (
+    <>
+    <Helmet><title>Free-trade store-checkout</title></Helmet>
     <div className="Checkout">
       <div className="Checkout-content">
         {cart.length > 0 ? (
@@ -52,6 +55,8 @@ const Checkout = () => {
         </div>
       )}
     </div>
+    </>
+    
   );
 };
 

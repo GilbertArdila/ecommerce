@@ -13,3 +13,4 @@ build in react 17  and react router dom 5 this is an E-commerce project where we
 - regexp
 - axios
 - geoCode
+- Helmet
