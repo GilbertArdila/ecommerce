@@ -13,8 +13,7 @@ import { useInitialState } from '../hooks/useInitialState';
 const App = () => {
   const initialState = useInitialState();
   const isEmpty=Object.keys(initialState.state).length;
- console.log(initialState)
-
+  
   return (
     <>
    {isEmpty > 0 ?(
