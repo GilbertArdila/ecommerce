@@ -44,7 +44,7 @@ body{
   .Products-item {
     width: 280px;
     height: 400px;
-    margin: 5px auto;
+    margin: 15px auto;
     padding: 0 5px;
     border: 1px solid rgba(22, 23, 24, 0.06);
     text-decoration: none;
@@ -95,6 +95,9 @@ body{
     display: grid;
     padding: 0 0 4em 0;
   }
+  .Checkout-content{
+    padding: 10px;
+  }
   .Checkout-item {
     display: flex;
     justify-content: space-between;
@@ -139,7 +142,8 @@ body{
       padding: 6px 24px;
       text-decoration: none;
       text-shadow: 0px 1px 0px #7cacde;
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
       display: block;
       outline: none;
   }
@@ -147,6 +151,7 @@ body{
   a {
     text-decoration: none;
   }
+ 
 .Information {
     grid-template-columns: 3fr 1fr;
     grid-gap: 2rem;
@@ -160,7 +165,7 @@ body{
     align-items: center;
   }
   .Information-sidebar {
-    margin: 10px 0 0 0;
+    margin: 10px 20px 0 0;
   }
   .Information-back {
     margin: 10px 0 0 0;
@@ -244,6 +249,27 @@ body{
     grid-gap: 2rem;
     grid-row-gap: 1.5em;
     display: grid;
+    padding: 0 10px;
+  }
+  .Payment-resume{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .Payment-resume img{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+  .Payment-resume h2{
+    font-weight: bolder;
+  }
+  .Payment-resume span{
+    font-weight: 600;
   }
   .Payment-back {
     margin: 10px 0 0 0;
@@ -273,12 +299,27 @@ body{
   .Payment-element h4 {
     margin: 0;
   }
+  .Payment-buyerInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .Payment-buyerInformation h2{
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  .Payment-button{
+    margin: 10px auto;
+  }
+  
 .Success {
     margin: 0 0 4em 0;
   }
   .Success-map {
     margin: 10px 0 0 0;
   }
+  
 .page_404 {
   padding: 40px 0;
   background: #fff;

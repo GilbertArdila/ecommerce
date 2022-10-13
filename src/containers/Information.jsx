@@ -23,32 +23,36 @@ const Information = () => {
         title: 'Error!',
         text: 'Por favor ingresa nombre y apellido separados por un espacio',
         icon: 'error',
-        confirmButtonText: 'Close'
-      })
+        confirmButtonText: 'Close',
+      });
     } else if (!regex_email.test(formData.get('email').trim())) {
       Swal.fire({
         title: 'Error!',
         text: 'Dirección de correo invalida, verificala por favor',
         icon: 'error',
-        confirmButtonText: 'Close'
-      })
+        confirmButtonText: 'Close',
+      });
     } else if (!regex_phone.test(formData.get('phone').trim())) {
       Swal.fire({
         title: 'Error!',
         text: 'El número teléfonico debe tener 10  dígitos sin espacios ni caracteres especiales',
         icon: 'error',
-        confirmButtonText: 'Close'
-      })
-    }
-    else if (formData.get('address') === '' || formData.get('apto') === '' || formData.get('city') === '' || formData.get('state') === '' || formData.get('cp') === '') {
+        confirmButtonText: 'Close',
+      });
+    } else if (
+      formData.get('address') === '' ||
+      formData.get('apto') === '' ||
+      formData.get('city') === '' ||
+      formData.get('state') === '' ||
+      formData.get('cp') === ''
+    ) {
       Swal.fire({
         title: 'Error!',
         text: 'Verifica que todos los campos estén diligenciados',
         icon: 'error',
-        confirmButtonText: 'Close'
-      })
-    }
-    else {
+        confirmButtonText: 'Close',
+      });
+    } else {
       const buyer = {
         name: formData.get('name'),
         email: formData.get('email'),
@@ -62,7 +66,6 @@ const Information = () => {
       addToBuyer(buyer);
       history.push('/checkout/payment');
     }
-
   };
 
   return (

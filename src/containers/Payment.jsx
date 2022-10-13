@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import { PayPalButton } from 'react-paypal-button';
 import { AppContext } from '../context/AppContext';
-import { PayPalButton } from 'react-paypal-button-v2';
+
 import '../Styles/components/Pyment.css';
 
 const Payment = () => {
-
   const { state, addNewOrder } = useContext(AppContext);
   const { cart, buyer } = state;
   const history = useHistory();
@@ -17,19 +17,17 @@ const Payment = () => {
   };
 
   const paypalOptions = {
-    clientId:
-      'sb',
+    clientId: 'sb',
     intent: 'capture',
     currency: 'USD',
   };
   const buttonStyles = {
     layout: 'vertical',
-    color:  'gold',
-    shape:  'rect'
+    color: 'gold',
+    shape: 'rect',
   };
 
   const handlePaymentSucces = (data) => {
-    console.log(data);
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
@@ -58,10 +56,7 @@ const Payment = () => {
           <h2>No hay nada en el carrito aún!</h2>
         )}
 
-       
-
         <div className="Payment-button">
-        
           <PayPalButton
             paypalOptions={paypalOptions}
             buttonStyles={buttonStyles}
@@ -74,7 +69,7 @@ const Payment = () => {
         </div>
       </div>
       <div>
-      {buyer.length > 0 && (
+        {buyer.length > 0 && (
           <div className="Payment-buyerInformation">
             <h2>
               {buyer[0].name}{' '}
