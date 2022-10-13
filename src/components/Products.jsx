@@ -5,11 +5,14 @@ import { Searcher } from './Searcher';
 import { AppContext } from '../context/AppContext';
 
 const Products = () => {
-  const { state, addToCart } = useContext(AppContext);
-  const { products } = state;
+
+  const { products, addToCart } = useContext(AppContext);
+  console.log(products)
   const [productos, setProductos] = useState(products);
+  console.log(`estos son los productos ${productos}`)
   const [search, setSearch] = useState('');
   const searchInput = useRef(null);
+ 
 
   const handleAddToCart = (product) => {
     addToCart(product);

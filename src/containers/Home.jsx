@@ -4,12 +4,12 @@ import { Products } from '../components/Products';
 
 const Home = () => {
   return (
-  <>
-  <Helmet>
-    <title>Free-trade store-products</title>
-  </Helmet>
-  <Products />
-  </>
+    <>
+      <Helmet>
+        <title>Free-trade store-products</title>
+      </Helmet>
+      <Products />
+    </>
   );
 };
 

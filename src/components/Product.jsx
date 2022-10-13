@@ -2,6 +2,7 @@ import React from 'react';
 import '../Styles/components/Product.css';
 
 const Product = ({ product, handleAddToCart }) => {
+  
   return (
     <div className="Products-item">
       <img
