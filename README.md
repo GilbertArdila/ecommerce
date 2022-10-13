@@ -8,5 +8,8 @@ build in react 17  and react router dom 5 this is an E-commerce project where we
 - usestate
 - useContext
 - paypal integration
+- GoogleMaps integration
 - SweetAlert 2
 - regexp
+- axios
+- geoCode
