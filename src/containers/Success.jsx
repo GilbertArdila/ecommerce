@@ -7,7 +7,10 @@ import '../Styles/components/Success.css';
 const Success = () => {
   const { state } = useContext(AppContext);
   const { buyer } = state;
-  const location = useGoogleAdress(buyer[0].address);
+  let location;
+  //let location= useGoogleAdress(buyer[0].address)
+
+  
 
   return (
     <div className="Success">
@@ -15,7 +18,7 @@ const Success = () => {
         <h2>{`${buyer.name}, Gracias por tu compra`}</h2>
         <span>Te estaremos avisando el estado de tu pedido</span>
         <div className="Success-map">
-          <Map location={location} />
+          {/* <Map location={location} /> */}
         </div>
       </div>
     </div>

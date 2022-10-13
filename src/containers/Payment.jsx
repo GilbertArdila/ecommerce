@@ -28,6 +28,7 @@ const Payment = () => {
   };
 
   const handlePaymentSucces = (data) => {
+    console.log(data)
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
