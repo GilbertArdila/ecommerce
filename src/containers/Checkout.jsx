@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import '../Styles/components/Checkout.css';
 import { AppContext } from '../context/AppContext';
+import { handleTotalAmount } from '../helpers/handleTotalAmount';
 
 const Checkout = () => {
   const { state, removeFromCart } = useContext(AppContext);
@@ -12,12 +13,7 @@ const Checkout = () => {
     removeFromCart(product, i);
   };
 
-  const handleTotalAmount = () => {
-    const reducer = (accumulator, currentValue) =>
-      accumulator + currentValue.price;
-    const TotalAmount = cart.reduce(reducer, 0);
-    return TotalAmount;
-  };
+  
 
   return (
     <>

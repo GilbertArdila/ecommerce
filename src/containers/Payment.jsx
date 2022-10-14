@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useHistory } from 'react-router-dom';
 import { PayPalButton } from 'react-paypal-button';
 import { AppContext } from '../context/AppContext';
+import { handleTotalAmount } from '../helpers/handleTotalAmount';
 
 import '../Styles/components/Pyment.css';
 
@@ -11,11 +12,7 @@ const Payment = () => {
   const { cart, buyer } = state;
   const history = useHistory();
 
-  const handleTotalAmoun = () => {
-    const reducer = (sum, currentValue) => sum + currentValue.price;
-    const sum = cart.reduce(reducer, 0);
-    return sum;
-  };
+  
 
   const paypalOptions = {
     clientId: 'sb',
@@ -57,7 +54,7 @@ const Payment = () => {
             </div>
           ))}
           {cart.length > 0 ? (
-            <span>total: ${handleTotalAmoun()}</span>
+            <span>total: ${handleTotalAmount()}</span>
           ) : (
             <h2>No hay nada en el carrito aún!</h2>
           )}
@@ -66,7 +63,7 @@ const Payment = () => {
             <PayPalButton
               paypalOptions={paypalOptions}
               buttonStyles={buttonStyles}
-              amount={handleTotalAmoun()}
+              amount={handleTotalAmount()}
               onPaymentStart={() => console.log('payment start')}
               onPaymentSucces={(data) => handlePaymentSucces(data)}
               onPaymentError={(error) => console.log(error)}

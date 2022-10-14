@@ -22,7 +22,7 @@ const NotFound = () => {
 
                   <p>La página que buscas no está disponible o no existe!</p>
 
-                  <a href="'/" className="link_404">
+                  <a href="/" className="link_404">
                     Regresar
                   </a>
                 </div>

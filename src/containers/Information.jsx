@@ -3,18 +3,16 @@ import { Helmet } from 'react-helmet';
 import { Link, useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import Swal from 'sweetalert2';
-import { regex_email, regex_phone, regex_name } from '../regexp/Regexp';
+import { regex_email, regex_phone, regex_name } from '../helpers/Regexp';
+import { handleTotalAmount } from '../helpers/handleTotalAmount';
 import '../Styles/components/Information.css';
 const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
   const { cart } = state;
   const form = useRef(null);
   const history = useHistory();
-  const handleTotalAmoun = () => {
-    const reducer = (sum, currentValue) => sum + currentValue.price;
-    const sum = cart.reduce(reducer, 0);
-    return sum;
-  };
+
+  
 
   const handleSubmit = () => {
     const formData = new FormData(form.current);
@@ -121,7 +119,7 @@ const Information = () => {
               </div>
             </div>
           ))}
-          <span>total:${handleTotalAmoun()}</span>
+          <span>total:${handleTotalAmount()}</span>
         </div>
       </div>
     </>
