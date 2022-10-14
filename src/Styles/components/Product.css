@@ -29,6 +29,7 @@
   }
   .Products-item-info {
     padding: 10px;
+   
   }
   .Products-item-info h2 {
     font-size: 18px;
@@ -48,6 +49,9 @@
     height: 200px;
     border-radius: 5px 5px 0 0;
     object-fit: contain;
+  }
+  .Product-item_title{
+    height: 60px;
   }
   .Products-item button {
     background: linear-gradient(to bottom, var(--yellow) 5%, #d6da15 100%);
