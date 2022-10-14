@@ -12,8 +12,6 @@ const Information = () => {
   const form = useRef(null);
   const history = useHistory();
 
-  
-
   const handleSubmit = () => {
     const formData = new FormData(form.current);
 

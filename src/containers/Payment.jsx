@@ -12,8 +12,6 @@ const Payment = () => {
   const { cart, buyer } = state;
   const history = useHistory();
 
-  
-
   const paypalOptions = {
     clientId: 'sb',
     intent: 'capture',

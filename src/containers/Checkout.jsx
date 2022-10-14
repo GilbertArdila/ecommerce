@@ -13,8 +13,6 @@ const Checkout = () => {
     removeFromCart(product, i);
   };
 
-  
-
   return (
     <>
       <Helmet>

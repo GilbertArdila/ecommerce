@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import InitialState from '../initialState';
 
-
 const useInitialState = () => {
   const [state, setState] = useState(InitialState);
-  
-  
+
   const addToCart = (payload) => {
     setState({
       ...state,
@@ -41,7 +39,6 @@ const useInitialState = () => {
     state,
     addToBuyer,
     addNewOrder,
-    
   };
 };
 export { useInitialState };
